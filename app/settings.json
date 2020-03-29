@@ -1,0 +1,10 @@
+{
+    "appname" : "tranquil-lite",
+    "appport" : "0",
+    "mode" : "window",
+    "window" : {
+        "width" : "640",
+        "height" : "480",
+        "fullscreen" : false
+    }
+}
