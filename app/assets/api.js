@@ -16,31 +16,34 @@ export async function getStations() {
     .parseFromString(xml, "text/xml")
     .getElementsByTagName("channel");
 
-  return Array.from(channels).map(channel => {
-    return {
-      id: channel.id,
-      title: channel.getElementsByTagName("title")[0].textContent,
-      genre: channel.getElementsByTagName("genre")[0].textContent,
-      dj: channel.getElementsByTagName("dj")[0].textContent,
+  return Array.from(channels)
+    .map(channel => {
+      return {
+        id: channel.id,
+        title: channel.getElementsByTagName("title")[0].textContent,
+        description: channel.getElementsByTagName("description")[0].textContent,
+        genre: channel.getElementsByTagName("genre")[0].textContent,
+        dj: channel.getElementsByTagName("dj")[0].textContent,
 
-      // try to get the highest quality stream
-      playlistUrl:
-        channel.getElementsByTagName("highestpls").length !== 0
-          ? channel.getElementsByTagName("highestpls")[0].textContent
-          : channel.getElementsByTagName("fastpls")[0].textContent,
+        // try to get the highest quality stream
+        playlistUrl:
+          channel.getElementsByTagName("highestpls").length !== 0
+            ? channel.getElementsByTagName("highestpls")[0].textContent
+            : channel.getElementsByTagName("fastpls")[0].textContent,
 
-      image: channel.getElementsByTagName("image")[0].textContent,
-      lastPlaying: channel.getElementsByTagName("lastPlaying")[0].textContent,
-      listeners: parseInt(
-        channel.getElementsByTagName("listeners")[0].textContent
-      )
-    };
-  });
+        image: channel.getElementsByTagName("image")[0].textContent,
+        lastPlaying: channel.getElementsByTagName("lastPlaying")[0].textContent,
+        listeners: parseInt(
+          channel.getElementsByTagName("listeners")[0].textContent
+        )
+      };
+    })
+    .sort((a, b) => a.listeners < b.listeners);
 }
 
 /**
- * Fetch all played songs for a given channel
- * 
+ * Fetch recently played songs for a given channel
+ *
  * @param {string} id - The channel id
  */
 export async function getSongsForStation(id) {
