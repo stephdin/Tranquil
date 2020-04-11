@@ -3,7 +3,7 @@
  */
 const SomaFM = {
   channels: "https://somafm.com/channels.xml",
-  songs: id => `http://somafm.com/songs/${id}.xml`
+  songs: id => `https://somafm.com/songs/${id}.xml`
 };
 
 /**
