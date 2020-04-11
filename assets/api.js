@@ -38,7 +38,7 @@ export async function getStations() {
         ),
       };
     })
-    .sort((a, b) => a.listeners < b.listeners);
+    .sort((a, b) => b.listeners - a.listeners);
 }
 
 /**
