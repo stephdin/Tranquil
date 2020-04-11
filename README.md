@@ -2,4 +2,4 @@ tranquil is a minimal [SomaFM](https://somafm.com/) player. It is written in Van
 
 You can try it here: [https://stephdin.github.io/tranquil-lite/](https://stephdin.github.io/tranquil-lite/)
 
-Plase support SomaFM! [https://somafm.com/support/](https://somafm.com/support/)
+Please support SomaFM! [https://somafm.com/support/](https://somafm.com/support/)
