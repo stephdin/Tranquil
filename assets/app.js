@@ -10,7 +10,7 @@ window.onload = async function init() {
     console.log(`fetched ${stations.length} stations!`);
     console.debug(stations);
 
-    stations.forEach(station => {
+    stations.forEach((station) => {
       document.querySelector(".stations").appendChild(
         new Button({
           title: station.title,
@@ -21,7 +21,7 @@ window.onload = async function init() {
             const songs = await getSongsForStation(station.id);
             console.log(`fetched ${songs.length} songs!`);
             console.debug(songs);
-          }
+          },
         })
       );
     });
