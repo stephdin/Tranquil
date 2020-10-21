@@ -5,7 +5,7 @@ You can try it here: [https://stephdin.github.io/tranquil/](https://stephdin.git
 
 Run in App Mode: 
 ```
-chromium-browser --app=https://stephdin.github.io/tranquil-lite/ --window-size="400,500"
+chromium-browser --app=https://stephdin.github.io/tranquil/ --window-size="400,500"
 ```
 
 Please support SomaFM! [https://somafm.com/support/](https://somafm.com/support/)
